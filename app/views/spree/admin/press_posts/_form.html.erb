@@ -8,6 +8,11 @@
       <%= form.error_message_on :title %>
     <% end %>
 
+    <%= form.field_container :url do %>
+      <%= form.label :url, Spree.t(:url) %>
+      <%= form.text_field :url, :class => 'fullwidth url' %>
+    <% end %>
+
     <%= form.field_container :body do %>
   <%= form.label :body %> <span class="required">*</span><br />
   <%= form.text_area :body, {:cols => 60, :rows => 4, :class => 'fullwidth'} %>

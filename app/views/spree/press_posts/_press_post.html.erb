@@ -1,0 +1,12 @@
+<div class="press_post">
+  <div class="press_post_title">
+    <h3><%= press_post.title %></h3>
+  <span class="press_post_date"><%= press_post.created_at.strftime("Posted on %B %d %Y") %></span>
+  </div>
+  <div class="press_post_image">
+    <%= link_to image_tag(press_post.press_post_image.attachment.url(:large)), press_post.press_post_image.attachment.url(:large) %>
+  </div>
+  <div class="press_post_body">
+    <p><%= press_post.body %></p>
+  </div>
+</div>

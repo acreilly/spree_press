@@ -3,6 +3,7 @@ class CreateSpreePressPost < ActiveRecord::Migration
     create_table :spree_press_posts do |t|
       t.column :title, :string
       t.column :body, :text
+      t.column :url, :text
       t.timestamps
     end
   end
