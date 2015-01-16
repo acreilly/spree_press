@@ -4,5 +4,5 @@ Spree::Core::Engine.routes.draw do
     resources :press_posts
   end
 
-  get "/press", as: "press"
+  get "/press", to: "press_posts#index"
 end
