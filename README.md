@@ -8,7 +8,7 @@ Installation
 Add spree_press to your Gemfile:
 
 ```ruby
-gem 'spree_press', :github => "acreilly/spree_press"
+gem 'spree_press', :github => "acreilly/spree_press", branch: "2-3-stable"
 ```
 
 Bundle your dependencies and run the installation generator:
