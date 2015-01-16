@@ -1,7 +1,6 @@
 SpreePress
-==========
 
-Introduction goes here.
+Spree extension that adds a press page to your spree store.
 
 Installation
 ------------
@@ -37,3 +36,6 @@ require 'spree_press/factories'
 ```
 
 Copyright (c) 2015 [name of extension creator], released under the New BSD License
+=======
+# spree_press
+Press page for Spree
