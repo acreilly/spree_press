@@ -35,7 +35,7 @@ Simply add this require statement to your spec_helper:
 require 'spree_press/factories'
 ```
 
-Copyright (c) 2015 [name of extension creator], released under the New BSD License
+Copyright (c) 2015 Allison Reilly, released under the New BSD License
 =======
 # spree_press
 Press page for Spree
