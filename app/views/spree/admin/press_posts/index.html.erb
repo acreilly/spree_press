@@ -17,10 +17,8 @@
     </colgroup>
     <thead>
       <tr>
-        <th class="date"><%= Spree.t(:published_at) %></th>
         <th class="title"><%= Spree.t(:title) %></th>
-        <th class=""><%= Spree.t(:summary) %></th>
-        <th class=""><%= Spree.t(:visible) %></th>
+        <th class="image"><%= Spree.t(:image) %></th>
         <th class="actions"></th>
       </tr>
     </thead>
@@ -28,11 +26,8 @@
     <tbody>
       <% @press_posts.each do |press_post| %>
         <tr class="<%= cycle('odd', 'even') %>" id="<%= spree_dom_id press_post %>">
-          <td class="align-center"><%= l( press_post.published_at, :format => :blog_date) if press_post.published_at %></td>
           <td class="align-center"><%= press_post.title %></td>
-          <td class="align-center">
-            <%= content_tag(:i, '', :class => 'fa fa-ok green') if press_post.visible %>
-          </td>
+          <td class="align-center"><%= link_to image_tag(press_post.press_post_image.attachment.url(:small)), press_post.press_post_image.attachment.url(:large) %></td>
           <td class="actions">
             <%= link_to_edit press_post, :no_text => true %>
             <%= link_to_delete press_post, :no_text => true %>
@@ -42,7 +37,7 @@
     </tbody>
   </table>
 
-  <%= paginate @press_posts %>
+
 <% else %>
   <div class="alpha twelve columns no-objects-found">
     <%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/press_post')) %>,

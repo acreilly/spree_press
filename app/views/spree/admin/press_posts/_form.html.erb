@@ -8,26 +8,11 @@
       <%= form.error_message_on :title %>
     <% end %>
 
-    <div class="columns five alpha">
-      <%= form.field_container :published_at do %>
-        <%= form.label :published_at, Spree.t(:published_at) %><br />
-        <%= form.error_message_on :published_at %>
-        <% if @press_post.published_at? %>
-          <% published_at = l(@press_post.published_at, :format => Spree.t('date_picker.format')) %>
-        <% else %>
-          <% published_at = nil %>
-        <% end %>
-        <%= form.text_field :published_at, :value => published_at, :class => 'datepicker' %>
-      <% end %>
-    </div>
-
-    <div class="columns five omega">
-      <%= form.field_container :visible do %>
-        <%= form.label :visible, Spree.t(:visible) %><br />
-        <%= form.check_box :visible %>
-        <%= form.error_message_on :visible %>
-      <% end %>
-    </div>
+    <%= form.field_container :body do %>
+  <%= form.label :body %> <span class="required">*</span><br />
+  <%= form.text_area :body, {:cols => 60, :rows => 4, :class => 'fullwidth'} %>
+  <%= form.error_message_on :body %>
+<% end %>
 
   </div>
 
@@ -56,9 +41,3 @@
 
   </div>
 </div>
-
-<%= form.field_container :body do %>
-  <%= form.label :body %> <span class="required">*</span><br />
-  <%= form.text_area :body, {:cols => 60, :rows => 4, :class => 'fullwidth', :id => 'press_post_body'} %>
-  <%= form.error_message_on :body %>
-<% end %>
