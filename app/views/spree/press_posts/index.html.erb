@@ -5,7 +5,7 @@
   <% if !@press_posts.empty? %>
     <ul id="press_posts">
       <% @press_posts.each do |press_post| %>
-        <li>
+        <li id="<%= press_post.title %>">
           <%= render :partial => 'spree/press_posts/press_post', :locals => {:press_post => press_post} %>
         </li>
       <% end %>

@@ -2,6 +2,10 @@
 Placeholder manifest file.
 the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/frontend/all.css'
 */
+
+#press_post_container{
+  margin-top: 20px;
+}
 ul#press_posts{
   list-style: none;
   margin-left: 20px;
@@ -32,4 +36,11 @@ ul#press_posts{
 
 #press_posts_sidebar{
   margin-top: 20px;
+}
+#press_posts_sidebar ul{
+  list-style: none;
+}
+
+#press_posts_sidebar ul li{
+  margin: 5px 0;
 }

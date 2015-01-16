@@ -1,7 +1,10 @@
 <div id="press_posts_sidebar">
+  <h2>Press</h2>
   <ul>
   <% @press_posts.each do |press_post| %>
-    <%= press_post.title %>
+  <li>
+  <%= link_to press_post.title, "##{press_post.title}" %>
+  </li>
   <% end %>
   </ul>
 </div>
