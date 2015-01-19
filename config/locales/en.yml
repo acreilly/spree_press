@@ -4,6 +4,7 @@
 en:
   spree:
     new_press_post: "New press post"
+    back_to_press_list: "Back to press list"
   activerecord:
     models:
       spree/press_post:
