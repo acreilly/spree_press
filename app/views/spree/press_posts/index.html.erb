@@ -10,6 +10,7 @@
         </li>
       <% end %>
     </ul>
+    <%= paginate @press_posts %>
   <% else %>
     <p id="no_entries"><%= Spree.t(:no_press_posts) %></p>
   <% end %>
