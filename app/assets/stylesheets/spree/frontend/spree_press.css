@@ -44,3 +44,8 @@ ul#press_posts{
 #press_posts_sidebar ul li{
   margin: 5px 0;
 }
+
+.press_post_image img{
+  width: 100%;
+  height: auto;
+}
