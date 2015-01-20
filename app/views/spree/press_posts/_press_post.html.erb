@@ -2,9 +2,9 @@
   <div class="press_post_title">
     <h3>
       <% if press_post.url.nil? %>
-        <%= press_post.title %>
+      <%= press_post.title %>
       <% else %>
-        <%= link_to press_post.title, press_post.url %>
+      <%= link_to press_post.title, press_post.url %>
       <% end %>
     </h3>
     <span class="press_post_date"><%= press_post.created_at.strftime("Posted on %B %d %Y") %></span>
@@ -15,6 +15,13 @@
   </div>
   <% end %>
   <div class="press_post_body">
-    <%= simple_format(press_post.body) %>
+    <% if press_post.url.nil? %>
+    simple_format(press_post.body)
+    <% else %>
+    <p>
+    <%= press_post.post_summary %>
+    <%= link_to "Read more", press_post.url %>
+    </p>
+    <% end %>
   </div>
 </div>
