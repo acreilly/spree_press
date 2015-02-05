@@ -9,6 +9,12 @@ module SpreePress
       g.test_framework :rspec
     end
 
+
+initializer "spree.press.preferences", :before => :load_config_initializers do |app|
+      Spree::AppConfiguration.class_eval do
+        preference :press_summarized, :boolean, default: true
+      end
+    end
     def self.activate
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/models/**/*_decorator*.rb')) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
