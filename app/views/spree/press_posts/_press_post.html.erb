@@ -11,7 +11,11 @@
   </div>
   <% unless press_post.press_post_image.nil? %>
   <div class="press_post_image">
-    <%= link_to image_tag(press_post.press_post_image.attachment.url(:large)), press_post.press_post_image.attachment.url(:large) %>
+    <% if press_post.url.nil? %>
+      <%= link_to image_tag(press_post.press_post_image.attachment.url(:large)), press_post.press_post_image.attachment.url(:large) %>
+    <% else %>
+      <%= link_to image_tag(press_post.press_post_image.attachment.url(:large)), press_post.url %>
+    <% end %>
   </div>
   <% end %>
   <div class="press_post_body">
