@@ -4,7 +4,7 @@
       <% if press_post.url.nil? %>
       <%= press_post.title %>
       <% else %>
-      <%= link_to press_post.title, press_post.url %>
+      <%= link_to press_post.title, press_post.url, target: "_blank" %>
       <% end %>
     </h3>
     <span class="press_post_date"><%= press_post.created_at.strftime("Posted on %B %d %Y") %></span>
@@ -12,9 +12,9 @@
   <% unless press_post.press_post_image.nil? %>
   <div class="press_post_image">
     <% if press_post.url.nil? %>
-      <%= link_to image_tag(press_post.press_post_image.attachment.url(:large)), press_post.press_post_image.attachment.url(:large) %>
+      <%= link_to image_tag(press_post.press_post_image.attachment.url(:large)), press_post.press_post_image.attachment.url(:large), target: "_blank" %>
     <% else %>
-      <%= link_to image_tag(press_post.press_post_image.attachment.url(:large)), press_post.url %>
+      <%= link_to image_tag(press_post.press_post_image.attachment.url(:large)), press_post.url, target: "_blank" %>
     <% end %>
   </div>
   <% end %>
@@ -25,7 +25,7 @@
     <% else %>
     <p>
       <%= press_post.post_summary %>
-      <%= link_to "Read more", press_post.url %>
+      <%= link_to "Read more", press_post.url, target: "_blank" %>
     </p>
     <% end %>
     <% else %>
